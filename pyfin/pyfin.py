@@ -115,6 +115,7 @@ class Option(Instrument):
 
         vega = self.spot0 * yield_disc * d1_pdf * sqrt_mat
         gamma = yield_disc * (d1_pdf / (self.spot0 * self.vol * sqrt_mat))
+        print('delta:%.3f, gamma:%.5f, theta:%.1f, vega:%.3f' % (delta,gamma,theta,vega))
 
         return {
             OptionMeasure.VALUE: val,
@@ -323,3 +324,9 @@ class Option(Instrument):
 def is_number(x):
     return (x is not None) and \
            (isinstance(x, int) or isinstance(x, float) or isinstance(x, numbers.Integral))
+
+
+# test
+option_test = Option(opt_type=OptionType.CALL, spot0=5000, strike=5100, mat=7/30,vol=0.3,riskless_rate=0,yield_=0,exer_type=OptionExerciseType.EUROPEAN)
+option_test.black_scholes()
+# print(option_test.OptionMeasure.GAMMA())
