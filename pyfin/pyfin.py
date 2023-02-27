@@ -19,7 +19,7 @@ OptionExerciseType = enum(EUROPEAN='european', AMERICAN='american')
 OptionModel = enum(BLACK_SCHOLES='black_scholes', BINOMIAL_TREE='binomial_tree', MONTE_CARLO='monte_carlo')
 OptionMeasure = enum(VALUE='value', DELTA='delta', THETA='theta', RHO='rho', VEGA='vega', GAMMA='gamma')
 
-DEFAULT_BINOMIAL_TREE_NUM_STEPS = 25
+DEFAULT_BINOMIAL_TREE_NUM_STEPS = 200
 DEFAULT_MONTE_CARLO_NUM_STEPS = 50
 DEFAULT_MONTE_CARLO_NUM_PATHS = 100
 
